@@ -1,0 +1,30 @@
+<h1>sign up!</h1>
+
+<form action="<%=users_url%>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
+  <label for="email">email
+  <input type="text" name="user[email]" value="<%=@user.email%>">
+  </label>
+  <br>
+  <label for="username">username
+  <input type="text" name="user[username]" value="<%=@user.username%>">
+  </label>
+  <br>
+  <label for="password">password</label>
+  <input type="password" name="user[password]">
+  </label>
+  <br>
+  <button>Submit</button>
+  <br>
+  <br> Tell us more! <br>
+  <br>
+  <label for="fname">First Name</label>
+  <input type="text" name="[user]fname" value="<%=@user.fname%>">
+  <br>
+  <label for="lname">Last Name</label>
+  <input type="text" name="[user]lname" value="<%=@user.lname%>">
+  <br>
+  <button>Submit</button>
+
+
+</form>

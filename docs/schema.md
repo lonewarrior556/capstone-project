@@ -39,6 +39,7 @@ column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 email           | string    | not null, unique
+username        | sting     |
 password_digest | string    | not null,
 fname           | string    |
 lname           | string    |
