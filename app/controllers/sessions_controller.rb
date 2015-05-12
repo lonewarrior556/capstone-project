@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   before_action :redirect_logged_in, only: [:new]
 
   def new
+    render :new
   end
 
   def create
