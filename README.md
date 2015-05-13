@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: http://soon-too-come.com
+[heroku]: http://capstone-project.herokuapp.com/
 
 ## Minimum Viable Product
 Nyc stack overflow is a clone of StackOverflow built on Rails and Backbone.
