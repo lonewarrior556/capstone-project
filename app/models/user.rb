@@ -15,8 +15,13 @@ class User < ActiveRecord::Base
 
   has_many :questions,
   class_name: "Question",
-  foreign_key: "user_id",
-  primary_key: "id"
+  foreign_key: :user_id,
+  primary_key: :id
+
+  has_many :responses,
+  class_name: "Responses",
+  foreign_key: :user_id,
+  primary_key: :id
 
 
 

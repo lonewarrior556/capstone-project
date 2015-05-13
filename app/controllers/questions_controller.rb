@@ -19,6 +19,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @responses = Response.includes(:responder).where(question_id: @question.id)
     render :show
   end
 

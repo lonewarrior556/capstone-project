@@ -7,6 +7,11 @@ class Question < ActiveRecord::Base
   foreign_key: :user_id,
   primary_key: :id
 
+  has_many :responses,
+  class_name: "Response",
+  foreign_key: :question_id,
+  primary_key: :id
+
 
 
 private

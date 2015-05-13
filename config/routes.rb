@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   root :to => "questions#index"
 
-  resources :users, only: [:new, :create, :index]
+  resources :users, only: [:new, :create, :index, :show]
 
   get 'questions/unanswered', :to => "questions#unanswered"
   resources :questions
+
+  resources :responses, only: [:create]
 
 
   resource :sessions, only: [:new, :create, :destroy]

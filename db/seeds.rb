@@ -15,3 +15,7 @@ question4 = Question.create!(title: "question 4", user_id: 1, body: "what is a q
 question5 = Question.create!(title: "other question 1", user_id: 2, body: "another perso asking a question?")
 
 question6 = Question.create!(title: "other question 2", user_id: 2, body: "How do you know????")
+
+Response.create(question_id: 1, user_id: 2, body: "I have lived in bushwick for over a year and can tell you the m i s a much shittier train")
+Response.create(question_id: 2, user_id: 2, body: "hey you cannot spam up these answer boards!")
+Response.create(question_id: 3, user_id: 1, body: "hey YOU! cannot spam up these answer boards!")

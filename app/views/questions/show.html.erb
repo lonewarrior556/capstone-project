@@ -1,5 +1,35 @@
-<h1>  <%= @question.title %> </h1>
 
-<article class="">
+<section class="question">
+  <h1>  <%= @question.title %> </h1>
+  <p>
   <%= @question.body %>
-</article>
+  </p>
+</section>
+
+
+<ul class="responses">
+  <% @responses.each do |resp| %>
+  <li>
+  <p>
+    <%=resp.body%>
+    by <strong><a href="<%=user_url(resp.responder.id)%>" > <%=resp.responder.username%></a><strong>
+  </p>
+
+  </li>
+  <% end %>
+</ul>
+
+
+<h2>your Answer</h2>
+<form class="response-form" action="<%= responses_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <input type="hidden" name="response[question_id]" value="<%=@question.id%>">
+  <label for="body">Response
+  <input type="text" name="response[body]">
+  </label>
+  <br>
+</form>
+  <button>Post Your Answer</button>
+
+<!--
+<textarea name="" cols="92" rows="15" tabindex="101" data-min-length=""></textarea> -->
