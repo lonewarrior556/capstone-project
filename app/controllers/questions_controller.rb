@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
 
-  before_action :redirect_logged_in, only:[:create, :unanswered, :show]
+  before_action :redirect_logged_in, only:[:create, :unanswered, :show, :index]
 
   def index
     @questions = Question.all.reverse #sorted by reverse created
