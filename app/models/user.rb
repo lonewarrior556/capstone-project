@@ -13,6 +13,14 @@ class User < ActiveRecord::Base
     nil
   end
 
+  has_many :questions,
+  class_name: "Question",
+  foreign_key: "user_id",
+  primary_key: "id"
+
+
+
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
