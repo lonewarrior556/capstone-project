@@ -1,0 +1,9 @@
+<ul>
+<% @questions.each do |question| %>
+<section>
+  <h2> <a href="<%=question_url(question)%>"><%= question.title %></a>  
+    <strong> ........ asked by, <%=question.user.username%> </strong>
+  </h2>
+</secion>
+<% end %>
+</ul>

@@ -5,7 +5,9 @@ window.CapstoneProject = {
   Routers: {},
 
   initialize: function(){
-    alert("backbone")
+    $(".no-login").attr("id","")
+
+
   }
 }
 

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :index]
 
+  get 'questions/unanswered', :to => "questions#unanswered"
   resources :questions
 
 

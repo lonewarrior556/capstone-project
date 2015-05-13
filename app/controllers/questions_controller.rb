@@ -1,8 +1,20 @@
 class QuestionsController < ApplicationController
 
+  before_action :redirect_logged_in, only:[:create, :unanswered, :show]
+
   def index
-    @questions = Question.all
+    @questions = Question.all.reverse #sorted by reverse created
     render :index
+  end
+
+  def top
+    @questins = Question.all.sort{|a,b| a.responses.length > b.responses.length} #sorted by most responses /votes
+    render :top
+  end
+
+  def unanswered
+    @questions = Question.all.select{|question| !question.best_answer_id}
+    render :unanswered
   end
 
   def show
@@ -12,7 +24,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(clean_params)
-    @question.user_id = 1
+    @question.user_id = current_user
     @question.save
     redirect_to root_path
 

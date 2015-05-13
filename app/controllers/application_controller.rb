@@ -24,5 +24,10 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+  def redirect_logged_in
+    if logged_in?
+      redirect_to root_path+"#"+request.env['PATH_INFO'][1..-1]
+    end
+  end
 
 end

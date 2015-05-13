@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-  before_action :redirect_logged_in, only: [:new]
+  before_action :redirect_logged_in, only: [:new, :create]
 
   def new
     render :new
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:session_token] = nil
+    logout
     redirect_to root_path
   end
 

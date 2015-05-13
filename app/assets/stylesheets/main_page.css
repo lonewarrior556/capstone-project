@@ -9,6 +9,13 @@ ul {
   list-style: none;
 }
 
+.no-login{
+  visibility:hidden
+}
+#visible{
+  visibility:visible
+}
+
 .group:after{
   content:'';
   display: block;

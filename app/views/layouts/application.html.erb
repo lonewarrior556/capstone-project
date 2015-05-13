@@ -2,10 +2,16 @@
 <html>
 <head>
   <title>StackOverflow-NYC</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <% if logged_in? %>
-    <%= javascript_include_tag 'application'%>
+  <% if !logged_in? %>
+    <script>
+      if (window.location.hash){
+          window.location.replace(window.location.origin+"/" +window.location.hash.slice(1))}
+    </script>
+  <% else %>
+      <%= javascript_include_tag 'application'%>
   <% end %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 

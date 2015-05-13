@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :redirect_logged_in, only: [:new]
-
+  before_action :redirect_logged_in
 
   def index
     @users = User.all
@@ -28,10 +27,6 @@ class UsersController < ApplicationController
 private
   def user_params
     params.require(:user).permit(:email, :username, :fname, :lname, :password)
-  end
-
-  def redirect_logged_in
-    redirect_to root_path if self.logged_in?
   end
 
 end
