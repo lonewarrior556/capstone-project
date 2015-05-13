@@ -1,42 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SampleProjectProposal</title>
+  <title>StackOverflow-NYC</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <% if logged_in? %>
     <%= javascript_include_tag 'application'%>
   <% end %>
   <%= csrf_meta_tags %>
 </head>
-<ul>
 
-  <% if logged_in? %>
-      <li>  <% if current_user.fname.length > 0 %>
-              <%= "hello, #{current_user.fname}" %>
-            <% else%>
-              <%= "hello, #{current_user.username}"%>
-            <% end %>
-      </li>
-      <li>
-        <form action="<%=sessions_url%>" method="post">
-          <input type="hidden" name="_method" value="DELETE">
-          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-          <button>Sign Out</button>
-        </form>
-      </li>
-  <% else %>
-    <li><a href="<%=new_user_url%>">Sign Up</a></li>
-    <li><a href="<%=new_sessions_url%>">Log In</a></li>
-  <% end %>
-</ul>
-<% flash[:errors].to_a.each do |error| %>
-    <ul>
-      <li> <%= error %> </li>
-    </ul>
-  <% end %>
-<body id="content">
 
-<%= yield %>
 
+<body>
+  <%= render partial: "layouts/top_black_bar" %>
+  <%= render partial: "layouts/nav_bar" %>
+
+
+
+  <div class="content">
+    <%= yield %>
+
+  </div>
 </body>
 </html>

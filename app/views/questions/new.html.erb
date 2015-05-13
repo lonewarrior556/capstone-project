@@ -1,0 +1,10 @@
+<form action="<%=questions_url%> " method="post">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+  <label for="title">Title
+    <input type="text" name="question[title]">
+  </label>
+  <label for="body">Body
+    <input type="text" name="question[body]">
+  </label>
+  <button>submit question</button>
+</form>

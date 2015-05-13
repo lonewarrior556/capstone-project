@@ -1,6 +1,7 @@
-<h1>Top Questions</h1>
+<h1>Users</h1>
 
-
-<% if logged_in? %>
-  <%= render partial: "index" %>
+<ul>
+<% @users.each  do |user|%>
+  <li> <%=user.username %> </li>
 <% end %>
+</ul>

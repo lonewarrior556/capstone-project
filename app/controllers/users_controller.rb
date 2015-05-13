@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
 
   def index
+    @users = User.all
     render :index
   end
 
@@ -29,7 +30,7 @@ private
     params.require(:user).permit(:email, :username, :fname, :lname, :password)
   end
 
-  def redirect_logged_in  
+  def redirect_logged_in
     redirect_to root_path if self.logged_in?
   end
 

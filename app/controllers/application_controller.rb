@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     # dev
-    return User.first
+    return nil
     # dev
     User.find_by(session_token: session[:session_token])
   end
