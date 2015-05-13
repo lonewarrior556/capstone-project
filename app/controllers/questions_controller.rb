@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
   end
 
   def top
-    @questins = Question.all.sort{|a,b| a.responses.length > b.responses.length} #sorted by most responses /votes
+    @questions = Question.all.sort_by{|a| a.responses.length}.reverse #sorted by most responses /votes
     render :top
   end
 
