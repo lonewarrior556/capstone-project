@@ -1,0 +1,82 @@
+h1, li, ul, section, a {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.no-login{
+  visibility:hidden
+}
+.login{
+  visibility:hidden
+}
+#visible{
+  visibility:visible
+}
+
+.group:after{
+  content:'';
+  display: block;
+  clear: both;
+}
+
+.black-bar{
+  background: black;
+  width: 1000px;
+}
+
+
+.black-bar > li{
+  float: left;
+  margin-left: 15px;
+  margin-right: 15px;
+  color: white;
+}
+
+
+.black-bar .stack-exchange{
+  margin-left: 100px;
+  margin-right: 200px;
+}
+
+.nav-bar{
+  border: 1px solid black;
+  width : 998px;
+}
+
+.nav-bar > li {
+  float: left;
+  margin: 15px;
+  padding: 10px;
+}
+
+.nav-bar > li:hover {
+  background: orange;
+  border-radius: 5px;
+}
+
+.nav-bar .logo {
+  margin-left: 105px;
+  margin-right: 290px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+
+
+
+ */
+
