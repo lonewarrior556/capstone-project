@@ -6,11 +6,14 @@ class ResponsesController < ApplicationController
     @response.question_id = question_id
     @response.body= clean_params[:body]
     if @response.save
-      redirect_to question_url(question_id)
+      render json: @response
     else
 
     end
+  end
 
+  def index
+    Response.find_by(question_id: params[:question_id])
   end
 
 

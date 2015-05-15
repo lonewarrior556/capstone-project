@@ -12,6 +12,9 @@ ul {
 .no-login{
   visibility:hidden
 }
+.login{
+  visibility:hidden
+}
 #visible{
   visibility:visible
 }

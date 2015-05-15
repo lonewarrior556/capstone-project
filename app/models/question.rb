@@ -2,6 +2,8 @@ class Question < ActiveRecord::Base
   validates :user_id, :title, presence: true
   validate :title_less_than_255
 
+  attr_accessor :responds
+
   belongs_to :user,
   class_name: "User",
   foreign_key: :user_id,

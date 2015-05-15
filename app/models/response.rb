@@ -1,6 +1,5 @@
 class Response < ActiveRecord::Base
   validates :question_id, :user_id, :body, presence: true
-  validates :question_id, uniqueness: {scope: :user_id}
   validate :body_length
 
   belongs_to :question,

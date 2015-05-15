@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw  do
   root :to => "questions#top"
 
   resources :users, only: [:new, :create, :index, :show]
@@ -10,5 +10,10 @@ Rails.application.routes.draw do
 
 
   resource :sessions, only: [:new, :create, :destroy]
+
+  resources :api_questions, defaults: { :format => 'json' } do
+    resources :api_responses, only: [:index], defaults: { :format => 'json' }
+  end
+
 
 end

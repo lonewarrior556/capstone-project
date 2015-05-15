@@ -28,7 +28,10 @@ class QuestionsController < ApplicationController
     @question.user_id = current_user
     @question.save
     redirect_to root_path
+  end
 
+  def new
+    redirect_to new_sessions_url
   end
 
 private

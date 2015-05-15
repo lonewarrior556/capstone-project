@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
   before_save :generate_session_token
 
   def self.find_by_login(params)
-    user = user.find_by(username: param[:username]) || (User.new)
+    user = User.find_by(username: params[:username])
+    return nil if !user
     if BCrypt::Password.new(user.password_digest).is_password?(params[:password])
       return user
     end

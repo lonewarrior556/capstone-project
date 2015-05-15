@@ -1,0 +1,30 @@
+
+<section class="question">
+  <h1>  <%= question.get("title") %> </h1>
+  <p>
+  <%= question.get("body") %>
+  </p>
+</section>
+
+
+<ul class="responses">
+  <% responses.each(function(resp){ %>
+  <li>
+  <p>
+    <%=resp.get("body")%>
+  </p>
+
+  </li>
+  <% }) %>
+</ul>
+
+
+<h2>your Answer</h2>
+<form class="answer-form">
+  <input type="hidden" name="response[question_id]" value="<%=question.id%>">
+  <label for="body">Response
+  <input type="text" name="response[body]">
+  </label>
+  <br>
+</form>
+  <button class="answer-button">Post Your Answer</button>

@@ -1,0 +1,9 @@
+  <% if logged_in? %>
+    <li>
+      <form action="<%=sessions_url%>" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <button id="log-out">Sign Out</button>
+      </form>
+    </li>
+<% end %>

@@ -4,11 +4,17 @@
       <li>current community</li>
       <li>your communities</li>
       <li>more communities</li>
+      <%= render partial: "codeBin/logout" %>
+
     </ul>
   </li>
 
-  <li class="no-login" id="visible">
-    <a  href="<%=new_user_url%>">sign up</a>
+  <li>
+    <% if logged_in? %>
+      <a  href="<%=user_url(current_user)%>">Profile</a>
+    <% else %>
+      <a  href="<%=new_user_url%>">sign up</a>
+    <% end %>
   </li>
 
   <li class="no-login" id="visible">
