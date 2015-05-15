@@ -17,12 +17,16 @@ CapstoneProject.Views.QuestionShow = Backbone.View.extend({
 
   submit: function(event){
     event.preventDefault()
+    var that = this
     var options = this.$el.find(".answer-form").serializeJSON().response
     var resp = new CapstoneProject.Models.Response({})
     resp.set(options)
     resp.save()
-    Backbone.history.navigate("")
-    Backbone.history.navigate("questions/"+this.id,{trigger: true})
+    this.responses.fetch({success: function(){
+      that.render()
+    }})
+    CapstoneProject.router.collection.fetch()
+
   }
 
 

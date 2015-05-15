@@ -1,4 +1,4 @@
-CapstoneProject.Views.QuestionIndex = Backbone.View.extend({
+CapstoneProject.Views.Questions = Backbone.View.extend({
 
   template: JST["questions/index"],
 
