@@ -2,6 +2,11 @@
 
 <ul>
 <% @users.each  do |user|%>
-  <li> <%=user.username %> </li>
+
+  <li>
+    <img src="<%=asset_path(user.avatar.url)%>" width="48">
+    <%=user.username %>
+
+    </li>
 <% end %>
 </ul>

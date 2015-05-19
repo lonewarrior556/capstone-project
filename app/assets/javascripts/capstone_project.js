@@ -13,16 +13,18 @@ window.CapstoneProject = {
       var index = hash.indexOf("/")
       hash = hash.slice(index)
       Backbone.history.navigate(hash, {trigger: true})
-
     });
 
     CapstoneProject.indexQuestions = new CapstoneProject.Collections.IndexQuestions()
+
     CapstoneProject.indexQuestions.fetch({
       success: function(){
+
         CapstoneProject.router =
         new CapstoneProject.Routers.
-        Router({   root$el: $(".content"),
+        Router({ root$el: $(".content"),
                 collection: CapstoneProject.indexQuestions});
+
         Backbone.history.start();
 
       }

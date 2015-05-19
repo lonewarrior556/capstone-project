@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   validates :email, :username, presence: true
   validates :email, :username, uniqueness: true
   validate :valid_email, :password_length
-  attr_reader :password
+  attr_reader :password, :avatar
   before_save :generate_session_token
 
   def self.find_by_login(params)
@@ -23,6 +23,14 @@ class User < ActiveRecord::Base
   class_name: "Responses",
   foreign_key: :user_id,
   primary_key: :id
+
+  # attr_accessible :avatar
+  # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  has_attached_file :avatar, :default_url => "missing.jpg"
+  # :styles => {
+  #     :medium => "300x300>",
+  #     :thumb => "100x100>" },
+
 
 
 

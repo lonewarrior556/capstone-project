@@ -1,9 +1,11 @@
 CapstoneProject.Routers.Router = Backbone.Router.extend({
 
-  routes: { '': 'top',
-  'questions': 'index',
+  routes: { '': 'questionTop',
+  'users': 'usersIndex',
+  'questions': 'questionIndex',
   'questions/unanswered': 'unanswered',
-  'questions/:id': 'show'
+  'users/:id': 'userShow',
+  'questions/:id': 'questionShow'
   },
 
   initialize: function(options){
@@ -11,13 +13,13 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
     this.root$el = options.root$el
   },
 
-  top: function(){
+  questionTop: function(){
     this._emptyAppend("Top Questions")
     this.collection.comparator = function(model){return -model.get("responses")}
     this.questions(this.collection)
   },
 
-  index: function(){
+  questionIndex: function(){
     this._emptyAppend("All Questions")
     this.collection.comparator = function(model){return model.get("id")}
     this.questions(this.collection)
@@ -34,7 +36,7 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
     this.root$el.append(view.render().$el)
     },
 
-  show: function(id){
+  questionShow: function(id){
     this._emptyAppend();
     var that = this
     CapstoneProject.view = new CapstoneProject.Views.QuestionShow({id: id})
@@ -42,6 +44,32 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
       ).then(function(){
       that.root$el.html(CapstoneProject.view.render().$el)})
     },
+
+  usersIndex: function(){
+    var that = this;
+    if (!this.users){
+      this.users = new CapstoneProject.Collections.Users()
+    }
+    this._emptyAppend("Users")
+    this.users.fetch({
+      success: function(users){
+        var view = new CapstoneProject.Views.UsersIndex({users: users})
+        that.root$el.append(view.render().$el)
+      }
+    })
+  },
+
+  userShow: function(id){
+    var that = this;
+    var user = new CapstoneProject.Models.User({id: id})
+    this._emptyAppend("")
+    user.fetch({
+      success: function(user){
+        var view = new CapstoneProject.Views.UserShow({user: user})
+        that.root$el.html(view.render().$el)
+      }
+    })
+  },
 
 
     _emptyAppend: function(title){

@@ -1,10 +1,13 @@
-<ul>
+<ul class="question-list">
 <% questions.each(function(question){ %>
   <section>
     <h2>
       <%=question.get("responses")%>
       <a class="question" href="#questions/<%=question.id%>"><%=question.get("title")%></a>
-        <strong> ........ asked by, <%=question.get("author")%> </strong>
+        <% if (question.get("author")){ %>
+          <strong> ........ asked by, <%=question.get("author")%> </strong>
+        <% } %>
+
     </h2>
   </section>
 

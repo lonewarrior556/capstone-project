@@ -1,0 +1,22 @@
+
+
+<section class="profile">
+
+<img class="profile-image"src="<%=user.get("image_url")%>"/>
+<article class="about">
+  <h2> <%=user.get("username")%> </h2>
+  <% if(user.get("thyself")){%>
+     <li>This is your profile</li>
+  <% } %>
+  <ul>
+    <li> <%=user.get("fname")%> </li>
+  </ul>
+  <p>
+
+  </p>
+</article>
+</section>
+<section class="activity"> </section>
+<section class="edit-profile"> </section>
+<section class="history">
+</section>

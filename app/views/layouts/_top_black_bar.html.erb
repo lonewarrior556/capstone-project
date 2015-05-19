@@ -1,37 +1,39 @@
-<ul class="black-bar group">
-  <li>
-    <ul class="stack-exchange">
-      <li>current community</li>
-      <li>your communities</li>
-      <li>more communities</li>
-      <%= render partial: "codeBin/logout" %>
-
+<div class="just-black group">
+<header class="black-bar group">
+  <ul class="stack-exchange">
+    <li>current community</li>
+    <li>your communities</li>
+    <li>more communities</li>
+    <%= render partial: "codeBin/logout" %>
     </ul>
-  </li>
 
-  <li>
-    <% if logged_in? %>
-      <a  href="<%=user_url(current_user)%>">Profile</a>
-    <% else %>
-      <a  href="<%=new_user_url%>">sign up</a>
-    <% end %>
-  </li>
+  <ul class="header-options">
+    <li>
+      <% if logged_in? %>
+        <a  href="<%=user_url(current_user)%>">Profile</a>
+      <% else %>
+        <a  href="<%=new_user_url%>">sign up</a>
+      <% end %>
+    </li>
 
-  <li class="no-login" id="visible">
-    <a href="<%=new_sessions_url%>">log in</a>
-  </li>
+    <li class="no-login" id="visible">
+      <a href="<%=new_sessions_url%>">log in</a>
+    </li>
 
-  <li><a href="#">tour</a></li>
+    <li><a href="#">tour</a></li>
 
-  <li>
-    <ul class="help" >
-      <li>tour</li>
-      <li>help center</li>
-      <li>meta</li>
-    </ul>
-  </li>
+    <li>
+      <ul class="help" >
+        <li>help</li>
+        <li>tour</li>
+        <li>help center</li>
+        <li>meta</li>
+      </ul>
+    </li>
 
-  <li><input type="text" name="search" value="search"> </li>
+    <li><input type="text" name="search" value="search"> </li>
+  </ul>
 
 
-</ul>
+</header>
+</div>

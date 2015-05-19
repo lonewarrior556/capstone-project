@@ -1,14 +1,19 @@
-h1, li, ul, section, a {
+h1, h2, li, ul, section, a, div, body {
   padding: 0;
   border: 0;
   margin: 0;
   color: inherit;
+  display: block;
+  font-family: sans-serif;
 }
 
 ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
 .no-login{
   visibility:hidden
 }
@@ -25,42 +30,88 @@ ul {
   clear: both;
 }
 
-.black-bar{
-  background: black;
-  width: 1000px;
+.just-black{
+  background: #222;
 }
 
-
-.black-bar > li{
-  float: left;
-  margin-left: 15px;
-  margin-right: 15px;
+.black-bar{
+  font-size: 14px;
+  background: #222;;
+  margin:auto;
+  width: 1000px;
+  height: 40px;
+  overflow: hidden;
   color: white;
 }
 
 
 .black-bar .stack-exchange{
-  margin-left: 100px;
-  margin-right: 200px;
+  float: left;
+}
+
+.black-bar .header-options{
+  float:right
+}
+
+.black-bar .header-options > li{
+  float:left;
+  padding: 5px;
+}
+
+.black-bar .header-options > li > input{
+  margin: 5px;
+  width: 215px;
+}
+
+.black-bar .header-options > li:hover{
+  background: grey;
 }
 
 .nav-bar{
-  border: 1px solid black;
-  width : 998px;
+  margin:auto;
+  width: 1000px;
+  margin-bottom: 40px;
 }
 
-.nav-bar > li {
+.nav-bar-paths{
+  float: right;
+}
+
+.nav-bar-paths > li{
+  margin-top: 40px;
+  font-size: 16px;
   float: left;
-  margin: 15px;
-  padding: 10px;
+  padding: 5px 10px;
+  background: grey;
+  margin-left: 10px;
+  color: white;
+  border-radius: 1px;
 }
 
-.nav-bar > li:hover {
+.nav-bar-paths > li:hover {
   background: orange;
-  border-radius: 5px;
 }
 
 .nav-bar .logo {
-  margin-left: 105px;
-  margin-right: 290px;
+  float: left;
+  font-size: 22px;
+  padding: 45px;
+  padding-bottom: 0px;
+  position:relative;
+}
+.nav-bar .logo > strong{
+  font-weight: bold;
+}
+
+.nav-bar .logo  img{
+  top: 13px;
+  left: 0;
+  position: absolute;
+  height: 50px;
+  padding: 5px;
+}
+
+.content{
+  width: 1000px;
+  margin: auto;
 }

@@ -15,5 +15,7 @@ Rails.application.routes.draw  do
     resources :api_responses, only: [:index], defaults: { :format => 'json' }
   end
 
+  resources :api_users, defaults: { :formant => 'json'}
+
 
 end

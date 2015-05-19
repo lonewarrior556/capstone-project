@@ -1,7 +1,7 @@
 <h1>sign up!</h1>
 
 <form action="<%=users_url%>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="email">email
   <input type="text" name="user[email]" value="<%=@user.email%>">
   </label>
@@ -23,6 +23,10 @@
   <br>
   <label for="lname">Last Name</label>
   <input type="text" name="[user]lname" value="<%=@user.lname%>">
+  <br>
+  <%= form_for @user, :url => users_path, :html => { :multipart => true } do |form| %>
+  <%= form.file_field :avatar %>
+  <% end %>
   <br>
   <button>Submit</button>
 

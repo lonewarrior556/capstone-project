@@ -12,9 +12,9 @@ class ResponsesController < ApplicationController
     end
   end
 
-  def index
-    Response.find_by(question_id: params[:question_id])
-  end
+  # def index
+  #   Response.find_by(question_id: params[:question_id])
+  # end
 
 
 private
