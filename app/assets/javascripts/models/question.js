@@ -2,7 +2,7 @@ CapstoneProject.Models.IndexQuestion = Backbone.Model.extend({
 
 
 
-})
+});
 
 
 CapstoneProject.Models.ShowQuestion = Backbone.Model.extend({
@@ -20,4 +20,4 @@ CapstoneProject.Models.ShowQuestion = Backbone.Model.extend({
     },
 
 
-})
+});
