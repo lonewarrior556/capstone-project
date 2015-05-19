@@ -36,6 +36,7 @@ window.CapstoneProject = {
 
 
 
-$(document).ready(function(){
-  CapstoneProject.initialize();
+// $(document).ready(function(){
+//   CapstoneProject.initialize();
+
 })
