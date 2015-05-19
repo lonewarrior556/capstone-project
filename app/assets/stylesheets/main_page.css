@@ -43,6 +43,9 @@ a {
   overflow: hidden;
   color: white;
 }
+.black-bar:hover{
+  overflow: visible;
+}
 
 
 .black-bar .stack-exchange{
