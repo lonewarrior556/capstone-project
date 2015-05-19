@@ -6,6 +6,9 @@ h1, h2, li, ul, section, a, div, body {
   display: block;
   font-family: sans-serif;
 }
+body {
+  padding-bottom: 40px;
+}
 
 ul {
   list-style: none;

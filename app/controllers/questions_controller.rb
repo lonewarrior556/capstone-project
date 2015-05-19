@@ -23,13 +23,6 @@ class QuestionsController < ApplicationController
     render :show
   end
 
-  def create
-    @question = Question.new(clean_params)
-    @question.user_id = current_user
-    @question.save
-    redirect_to root_path
-  end
-
   def new
     redirect_to new_sessions_url
   end

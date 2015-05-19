@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-  
+
     User.find_by(session_token: session[:session_token])
   end
 
@@ -25,6 +25,12 @@ class ApplicationController < ActionController::Base
   def redirect_logged_in
     if logged_in?
       redirect_to root_path+"#"+request.env['PATH_INFO'][1..-1]
+    end
+  end
+
+  def need_login
+    if !logged_in?
+      render json: "need login"
     end
   end
 

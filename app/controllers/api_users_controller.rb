@@ -1,5 +1,7 @@
 class ApiUsersController < ApplicationController
 
+  before_action :need_login
+
   def index
     @users = User.all
     render :index

@@ -52,6 +52,7 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
     this._emptyAppend("")
     var view = new CapstoneProject.Views.QuestionNew();
     this.root$el.html(view.render().$el)
+    nicEditors.allTextAreas()
   },
 
   usersIndex: function(){

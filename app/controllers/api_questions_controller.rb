@@ -1,5 +1,7 @@
 class ApiQuestionsController < ApplicationController
 
+  before_action :need_login
+
   def index
     @questions = Question.all
     @questions.each do |question|
@@ -13,6 +15,16 @@ class ApiQuestionsController < ApplicationController
     render json: @question
   end
 
+  def create
+    @question = Question.new(clean_params)
+    @question.user_id = current_user.id
+    @question.save
+    render json: @question
+  end
 
+private
+  def clean_params
+    params.require(:api_question).permit(:title, :body)
+  end
 
 end

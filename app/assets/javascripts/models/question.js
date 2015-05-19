@@ -17,5 +17,7 @@ CapstoneProject.Models.ShowQuestion = Backbone.Model.extend({
 
     initialize: function(options){
       this.id = options.id
-    }
+    },
+
+
 })
