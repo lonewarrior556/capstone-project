@@ -21,7 +21,7 @@ json.user do
   json.num_answers @responses.length
   json.answers do
     json.array! @responses do |resp|
-      json.question_id resp.question_id
+      json.id resp.question_id
       json.title resp.question.title
       json.timestamp resp.created_at
     end
