@@ -30,6 +30,7 @@ gem 'backbone-on-rails'
 gem 'rails_12factor'
 gem 'paperclip', '~> 4.2'
 
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

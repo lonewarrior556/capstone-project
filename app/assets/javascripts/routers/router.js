@@ -1,11 +1,14 @@
 CapstoneProject.Routers.Router = Backbone.Router.extend({
 
-  routes: { '': 'questionTop',
-  'users': 'usersIndex',
-  'questions': 'questionIndex',
+  routes: {
+                 'users': 'usersIndex',
+             'users/:id': 'userShow',
+
+                      '': 'questionTop',
+             'questions': 'questionIndex',
   'questions/unanswered': 'unanswered',
-  'users/:id': 'userShow',
-  'questions/:id': 'questionShow'
+         'questions/new': 'questionNew',
+         'questions/:id': 'questionShow'
   },
 
   initialize: function(options){
@@ -44,6 +47,12 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
       ).then(function(){
       that.root$el.html(CapstoneProject.view.render().$el)})
     },
+
+  questionNew: function(){
+    this._emptyAppend("")
+    var view = new CapstoneProject.Views.QuestionNew();
+    this.root$el.html(view.render().$el)
+  },
 
   usersIndex: function(){
     var that = this;
