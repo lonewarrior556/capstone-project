@@ -12,6 +12,7 @@ window.CapstoneProject = {
       var hash = event.currentTarget.href.slice(7)
       var index = hash.indexOf("/")
       hash = hash.slice(index)
+      console.log(hash)
       Backbone.history.navigate(hash, {trigger: true})
     });
 
