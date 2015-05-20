@@ -1,4 +1,4 @@
-h1, h2, li, ul, section, a, div, body {
+h1, h2, li, ul, section, a, div, body{
   padding: 0;
   border: 0;
   margin: 0;
@@ -26,11 +26,55 @@ a {
 #visible{
   visibility:visible
 }
+.help{
+  display:none;
+}
 
+#drop-down{
+  display: none;
+}
+.stack-exchange{
+  display: block;
+  position: absolute;
+}
+
+.stack-exchange label{
+  display: block;
+  padding: 10px;
+  padding-bottom: 15px;
+}
+
+.stack-exchange li{
+  display: block;
+  padding: 5px;
+  z-index: -1
+}
+.stack-exchange li:hover{
+  background: white;
+}
+
+#drop-down:checked ~ .stack-exchange{
+  z-index: 1;
+  background: grey;
+  color: black;
+  border: 1px solid black;
+}
+
+
+}
 .group:after{
   content:'';
   display: block;
   clear: both;
+}
+.content{
+  clear: both;
+}
+.content > h1 {
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
 }
 
 .just-black{
@@ -43,7 +87,7 @@ a {
   margin:auto;
   width: 1000px;
   height: 40px;
-  overflow: hidden;
+  /*overflow: hidden;*/
   color: white;
 }
 .black-bar:hover{
@@ -76,7 +120,6 @@ a {
 .nav-bar{
   margin:auto;
   width: 1000px;
-  margin-bottom: 40px;
 }
 
 .nav-bar-paths{

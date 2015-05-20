@@ -40,7 +40,7 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
     },
 
   questionShow: function(id){
-    this._emptyAppend();
+    this._emptyAppend("");
     var that = this
     CapstoneProject.view = new CapstoneProject.Views.QuestionShow({id: id})
     $.when(CapstoneProject.view.responses.fetch(), CapstoneProject.view.question.fetch()
