@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_login(clean_params)
+
     if @user
       self.login(@user)
       redirect_to root_path

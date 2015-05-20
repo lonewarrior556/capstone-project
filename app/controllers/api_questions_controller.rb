@@ -19,8 +19,11 @@ class ApiQuestionsController < ApplicationController
   def create
     @question = Question.new(clean_params)
     @question.user_id = current_user.id
-    @question.save
-    render json: @question
+    if @question.save
+      render json: @question
+    else
+      render json: @question.errors , status: :unproccessable_entity
+    end
   end
 
 private

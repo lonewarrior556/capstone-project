@@ -24,12 +24,9 @@ class User < ActiveRecord::Base
   foreign_key: :user_id,
   primary_key: :id
 
-  # attr_accessible :avatar
-  # validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-  has_attached_file :avatar, :default_url => "missing.jpg"
-  # :styles => {
-  #     :medium => "300x300>",
-  #     :thumb => "100x100>" },
+
+  has_attached_file :avatar, :default_url => ":style/missing.jpg", :styles => { :medium => "300x300>", :thumb => "50x50>" }
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 
 

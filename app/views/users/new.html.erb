@@ -1,6 +1,15 @@
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" >
+  </script>
 <h1>sign up!</h1>
 
-<form action="<%=users_url%>" method="post">
+<ul>
+<% flash[:errors].to_a.each do |error| %>
+  <li> <%=error%> </li>
+<% end %>
+</ul>
+
+<form id="new_user" action="<%=users_url%>" enctype="multipart/form-data" method="post"  accept-charset="UTF-8">
+  <input name="utf8" type="hidden" value="✓">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="email">email
   <input type="text" name="user[email]" value="<%=@user.email%>">
@@ -24,11 +33,32 @@
   <label for="lname">Last Name</label>
   <input type="text" name="[user]lname" value="<%=@user.lname%>">
   <br>
-  <%= form_for @user, :url => users_path, :html => { :multipart => true } do |form| %>
+
+  <label for="user[avatar]">Profile Image</label>
+  <input type="file" name="user[avatar]" id="user_avatar">
+  <!-- <%= form_for @user, :url => users_path, :html => { :multipart => true } do |form| %>
   <%= form.file_field :avatar %>
-  <% end %>
+  <% end %> -->
+  <br>
+  <img id="avatar" src="" alt="" width=100/>
   <br>
   <button>Submit</button>
 
-
 </form>
+
+  <script type="text/javascript">
+  var readURL = function(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $("#avatar").attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+
+    $("input[type=file]").change(function(){
+        readURL(this);
+    });
+
+  </script>

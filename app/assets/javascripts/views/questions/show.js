@@ -18,7 +18,10 @@ CapstoneProject.Views.QuestionShow = Backbone.View.extend({
   submit: function(event){
     event.preventDefault()
     var that = this
-    var options = this.$el.find(".answer-form").serializeJSON().response
+    var options = this.$el.find(".answer-form").serializeJSON().response;
+    if (options.body === ""){
+      return null
+    }
     var resp = new CapstoneProject.Models.Response({})
     resp.set(options)
     resp.save()

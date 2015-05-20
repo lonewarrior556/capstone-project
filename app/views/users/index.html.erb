@@ -2,9 +2,8 @@
 
 <ul>
 <% @users.each  do |user|%>
-
   <li>
-    <img src="<%=asset_path(user.avatar.url)%>" width="48">
+    <img src="<%=asset_path( user.avatar.url(:thumb) ) %>">
     <%=user.username %>
 
     </li>

@@ -34,11 +34,13 @@ a {
   display: none;
 }
 .stack-exchange{
+  cursor: pointer;
   display: block;
   position: absolute;
 }
 
 .stack-exchange label{
+  cursor: pointer;
   display: block;
   padding: 10px;
   padding-bottom: 15px;
