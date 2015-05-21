@@ -32,6 +32,7 @@ gem 'sprockets', '~> 2.0'
 gem 'ejs'
 gem 'figaro'
 gem 'aws-sdk'
+gem 'sanitize'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

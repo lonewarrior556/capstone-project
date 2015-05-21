@@ -1,6 +1,8 @@
 class Response < ActiveRecord::Base
   validates :question_id, :user_id, :body, presence: true
   validate :body_length
+  before_save :sanitize
+
 
   belongs_to :question,
   class_name: "Question",
@@ -21,6 +23,10 @@ private
     if self.body.length <1
       self.errors.add(:body,"needs to include a response")
     end
+  end
+
+  def sanitize
+    self.body = Sanitize.fragment(self.body)
   end
 
 end

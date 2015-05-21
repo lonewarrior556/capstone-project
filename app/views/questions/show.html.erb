@@ -3,7 +3,7 @@
   <h1>  <%= @question.title %> </h1>
 
   <p>
-  <%= @question.body %>
+  <%= @question.body.html_safe %>
   </p>
 
 </section>

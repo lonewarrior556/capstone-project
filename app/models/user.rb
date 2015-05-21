@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   validate :valid_email, :password_length
   attr_reader :password, :avatar
-  before_save :generate_session_token
+  before_save :generate_session_token, :sanitize
 
   def self.find_by_login(params)
     user = User.find_by(username: params[:username])
@@ -35,7 +35,6 @@ class User < ActiveRecord::Base
       @user.uid = auth.uid
       @user.auth_token = auth.credentials.token
       @user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      @user.generate_session_token
       @user.password = SecureRandom.urlsafe_base64(8)
       return @user
   end
@@ -82,5 +81,10 @@ class User < ActiveRecord::Base
       end
     end
 
+    def sanitize
+      self.username = Sanitize.fragment(self.username)
+      self.fname = Sanitize.fragment(self.fname)
+      self.lname = Sanitize.fragment(self.lname)
+    end
 
 end
