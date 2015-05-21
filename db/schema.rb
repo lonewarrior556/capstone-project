@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150518155200) do
+ActiveRecord::Schema.define(version: 20150521025904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,22 +40,31 @@ ActiveRecord::Schema.define(version: 20150518155200) do
   add_index "responses", ["user_id"], name: "index_responses_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",               null: false
+    t.string   "email",                                            null: false
     t.string   "username"
-    t.string   "password_digest",     null: false
+    t.string   "password_digest",                                  null: false
     t.string   "fname"
     t.string   "lname"
-    t.string   "session_token",       null: false
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.string   "session_token",                                    null: false
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "provider",            default: "capstone_project"
+    t.string   "uid"
+    t.string   "auth_token"
+    t.datetime "oauth_expires_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["auth_token"], name: "index_users_on_auth_token", using: :btree
+  add_index "users", ["email", "provider"], name: "index_users_on_email_and_provider", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
   add_index "users", ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
+  add_index "users", ["username", "provider"], name: "index_users_on_username_and_provider", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end

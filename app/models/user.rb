@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
-  validates :email, :username, presence: true
-  validates :email, :username, uniqueness: true
+  validates :email, :username, :provider, presence: true
+
+  validates :email, :username, uniqueness: {scope: :provider, message: "only one unique user per sign in provider"}
+
   validate :valid_email, :password_length
   attr_reader :password, :avatar
   before_save :generate_session_token
@@ -13,6 +15,31 @@ class User < ActiveRecord::Base
     end
     nil
   end
+
+  def self.from_omniauth(auth)
+      @user = User.find_by(auth_token: auth.credentials.token)
+      return @user if @user
+
+      @user = User.find_by(uid: auth.uid)
+      if @user
+        @user.auth_token = auth.credentials.token
+        @user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+        return @user
+      end
+      @user = User.new
+      @user.fname= auth.extra.raw_info.given_name
+      @user.lname= auth.extra.raw_info.family_name
+      @user.email= auth.extra.raw_info.email
+      @user.username = @user.email.split("@")[0]
+      @user.provider = auth.provider
+      @user.uid = auth.uid
+      @user.auth_token = auth.credentials.token
+      @user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      @user.generate_session_token
+      @user.password = SecureRandom.urlsafe_base64(8)
+      return @user
+  end
+
 
   has_many :questions,
   class_name: "Question",
@@ -37,6 +64,10 @@ class User < ActiveRecord::Base
     self.password_digest = BCrypt::Password.create(password)
   end
 
+    def generate_session_token
+      self.session_token = SecureRandom.urlsafe_base64(16)
+      self.session_token
+    end
 
   private
     def valid_email
@@ -51,9 +82,5 @@ class User < ActiveRecord::Base
       end
     end
 
-    def generate_session_token
-      self.session_token = SecureRandom.urlsafe_base64(16)
-      self.session_token
-    end
 
 end

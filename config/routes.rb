@@ -8,7 +8,8 @@ Rails.application.routes.draw  do
 
   resources :responses, only: [:create]
 
-
+  get 'auth/:provider/callback', to: 'sessions#omniauth_callback'
+  get 'auth/failure', to: redirect('/')
   resource :sessions, only: [:new, :create, :destroy]
 
   resources :api_questions, defaults: { :format => 'json' } do

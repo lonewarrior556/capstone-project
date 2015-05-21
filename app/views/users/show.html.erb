@@ -1,0 +1,55 @@
+
+<section class="profile">
+
+  <img class="profile-image" src="<%=asset_path(@user.avatar.url(:medium))%>"/>
+  <article class="about">
+    <h2> <%=@user.username%> </h2>
+    <ul>
+       <% if !@user.fname.nil? %>
+      <li> <%=@user.fname%> </li>
+        <% end %>
+    </ul>
+    <p>
+
+    </p>
+  </article>
+  </section>
+  <section class="activity"> </section>
+  <section class="edit-profile"> </section>
+  <section class="history">
+    <div class="asked">
+      <h1>Questions</h1>
+      <div>
+        <ul class="question-list">
+
+          <section>
+            <% @questions.each do |question|%>
+
+  <a class="question" href="/questions/<%=question.id%>"><%=question.title%></a>
+            <% end %>
+
+          </section>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <div class="answered">
+      <h1>Answers</h1>
+      <div>
+        <ul class="question-list">
+
+          <section>
+
+            <% @resps.map{|x|x.question}.each do |question|%>
+
+  <a class="question" href="/questions/<%=question.id%>"><%=question.title%></a>
+            <% end %>
+
+          </section>
+        </ul>
+      </div>
+    </div>
+
+</section>

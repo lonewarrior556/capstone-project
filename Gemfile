@@ -41,6 +41,8 @@ gem 'rails_12factor'
 end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'omniauth-google-oauth2', '~> 0.2.1'
+
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
