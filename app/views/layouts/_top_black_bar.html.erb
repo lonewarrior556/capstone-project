@@ -35,7 +35,12 @@
       </ul>
     </li>
 
-    <li><input type="text" name="search" value="search"> </li>
+    <li>
+      <form class="search-bar" action="<%=sessions_search_url%>" method="get">
+        <input type="text" name="search" placeholder="search">
+        <button style = "display:none"></button>
+      </form>
+    </li>
   </ul>
 
 

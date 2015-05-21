@@ -1,9 +1,11 @@
 
 <section class="question">
   <h1>  <%= @question.title %> </h1>
+
   <p>
   <%= @question.body %>
   </p>
+
 </section>
 
 
@@ -21,15 +23,13 @@
 
 
 <h2>your Answer</h2>
-<form class="response-form" action="<%= responses_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
-  <input type="hidden" name="response[question_id]" value="<%=@question.id%>">
+<form action=" <%=new_sessions_url%> " method="get">
   <label for="body">Response
   <input type="text" name="response[body]">
   </label>
   <br>
-</form>
   <button>Post Your Answer</button>
+</form>
 
 <!--
 <textarea name="" cols="92" rows="15" tabindex="101" data-min-length=""></textarea> -->

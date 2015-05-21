@@ -1,0 +1,27 @@
+<h1> Users Matches for "<%= @query %>"</h1>
+<ul>
+
+<% @users.to_a.each do |user| %>
+
+<li>
+  <a href="<%= user_url(user) %>"> <%= user.username %></a>
+</li>
+
+<% end %>
+</ul>
+
+
+
+<h1> Questions Matches for "<%= @query %>"</h1>
+
+<ul>
+<% @questions.to_a.each do |question| %>
+
+
+<li>
+  <a href="<%= question_url(question) %>"><%= question.title %></a>
+</li>
+
+
+<% end %>
+</ul>

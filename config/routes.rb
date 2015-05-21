@@ -11,6 +11,7 @@ Rails.application.routes.draw  do
   get 'auth/:provider/callback', to: 'sessions#omniauth_callback'
   get 'auth/failure', to: redirect('/')
   resource :sessions, only: [:new, :create, :destroy]
+  get 'sessions/search', :to => "sessions#search"
 
   resources :api_questions, defaults: { :format => 'json' } do
     resources :api_responses, only: [:index], defaults: { :format => 'json' }

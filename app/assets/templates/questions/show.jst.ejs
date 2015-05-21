@@ -1,9 +1,12 @@
 
 <section class="question">
   <h1>  <%= question.get("title") %> </h1>
+
   <p>
+  <% console.log(question.get("body")) %>
   <%= question.get("body") %>
   </p>
+
   <div> <img src="<%=question.get("image_url")%>" alt="" width=35> <%= question.get("username") %> </div>
 </section>
 
