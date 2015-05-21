@@ -8,24 +8,22 @@ class ApiUsersController < ApplicationController
   end
 
   def show
-    @thyself = false
     @user = User.find(params[:id])
-    if @user == current_user
-      @thyself = true
-    end
+    @thyself = (@user == current_user)
     @questions = Question.all.where(user_id: params[:id]).includes(:responses)
     @responses = Response.all.where(user_id: params[:id]).includes(:question)
     render :show
   end
 
+  def update
+    fail
+    current_user
+    render :index
+  end
 
-
-
-
-
-
-
-
-
+  private
+    def user_params
+      params.require(:user).permit(:email, :username, :fname, :lname, :password, :avatar)
+    end
 
 end

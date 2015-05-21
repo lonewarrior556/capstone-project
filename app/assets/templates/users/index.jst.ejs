@@ -1,14 +1,12 @@
 <ul>
 <% users.each(function(user){ %>
   <section>
-    <h2>
-      <% if (user.get("firstName")){ %>
+    <l1>
+
+        <a class="user" href="#users/<%=user.id%>"><img src="<%=user.get("image_url")%>" alt="" width=48><%=user.get("username")%></a>
         <%=user.get("firstName")%><br>
-        <% } %>
-        <img src="<%=user.get("image_url")%>" alt="" width=48>
-        <a class="user" href="#users/<%=user.id%>"><%=user.get("username")%></a>
         <strong>  member since <%=user.get("memberSince")%> </strong>
-    </h2>
+    </l1>
   </section>
 
 <%  }) %>

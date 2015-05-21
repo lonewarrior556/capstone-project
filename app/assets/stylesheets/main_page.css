@@ -1,12 +1,14 @@
-h1, h2, li, ul, section, a, div, body{
+h1, h2, li, ul, section, a, div, body, strong{
   padding: 0;
   border: 0;
   margin: 0;
   color: inherit;
   display: block;
-  font-family: sans-serif;
+  font-style: inherit;
+
 }
 body {
+  font-family: sans-serif;
   padding-bottom: 40px;
 }
 
@@ -30,9 +32,6 @@ a {
   display:none;
 }
 
-#drop-down{
-  display: none;
-}
 .stack-exchange{
   cursor: pointer;
   display: block;
@@ -42,8 +41,9 @@ a {
 .stack-exchange label{
   cursor: pointer;
   display: block;
-  padding: 10px;
-  padding-bottom: 15px;
+  padding: 15px 10px;
+
+
 }
 
 .stack-exchange li{
@@ -53,6 +53,10 @@ a {
 }
 .stack-exchange li:hover{
   background: white;
+}
+
+#drop-down{
+  display: none;
 }
 
 #drop-down:checked ~ .stack-exchange{

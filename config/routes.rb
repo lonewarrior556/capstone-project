@@ -13,11 +13,12 @@ Rails.application.routes.draw  do
   resource :sessions, only: [:new, :create, :destroy]
   get 'sessions/search', :to => "sessions#search"
 
-  resources :api_questions, defaults: { :format => 'json' } do
+  resources :api_questions, only: [:index, :show, :create], defaults: { :format => 'json' } do
     resources :api_responses, only: [:index], defaults: { :format => 'json' }
   end
 
-  resources :api_users, defaults: { :formant => 'json'}
-
+  resources :api_users, only: [:index, :show], defaults: { :formant => 'json'}
+  patch 'api_users/', to: 'api_users#update_current_user'
+  put  'api_users/', to: 'api_users#update_current_user'
 
 end

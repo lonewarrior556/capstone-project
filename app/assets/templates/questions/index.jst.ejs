@@ -1,14 +1,24 @@
-<ul class="question-list">
-<% questions.each(function(question){ %>
-  <section>
-    <h2>
-      <%=question.get("responses")%>
-      <a class="question" href="#questions/<%=question.id%>"><%=question.get("title")%></a>
-        <% if (question.get("author")){ %>
-          <strong> ........ asked by, <%=question.get("author")%> </strong>
-        <% } %>
 
-    </h2>
-  </section>
+
+<ul class="question-index-<%=!!questions.models[0].get("author")%>">
+<% questions.each(function(question){ %>
+
+
+  <li>
+    <strong class="count">
+    <%=question.get("responses")%>
+    </strong>
+    <a class="question" href="#questions/<%=question.id%>"><%=question.get("title")%></a>
+
+    <% if (question.get("author")){ %>
+       <strong class="author">
+         ........ asked by, <%=question.get("author")%>
+       </strong>
+    <% } %>
+
+
+
+  </li>
 
 <%  }) %>
+</ul>

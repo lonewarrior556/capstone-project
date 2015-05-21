@@ -11,3 +11,11 @@
     </li>
 <% end %>
 </ul>
+
+
+<form class="edit_user" id="edit_user_1" enctype="multipart/form-data"
+  action="/users" accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="✓">
+  <input type="hidden" name="_method" value="patch">
+  <input type="file" name="user[avatar]" id="user_avatar">
+</form>
