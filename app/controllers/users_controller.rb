@@ -42,6 +42,7 @@ class UsersController < ApplicationController
 
  private
   def user_params
+    params[:user][:avatar] = params[:user][:avatar2] if params[:user][:avatar].nil?
     params.require(:user).permit(:email, :username, :fname, :lname, :password, :avatar)
   end
 
