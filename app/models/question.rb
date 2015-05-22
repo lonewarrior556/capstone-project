@@ -29,7 +29,7 @@ private
     self.body = Sanitize.fragment(self.body,
     :elements => ['b','u','i','img','ul','li','font','div','font','ol','style','br','h1','h2','h3','h4','h5','h6'],
     :attributes =>
-      {:all => ['color', 'style', 'background-color','size', 'face']},
+      {:all => ['color', 'style', 'background-color','size', 'face', 'src','href']},
     :css =>
       {:properties => ['background-color','text-align','color']})
   end
