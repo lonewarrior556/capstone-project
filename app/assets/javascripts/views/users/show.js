@@ -48,8 +48,8 @@ CapstoneProject.Views.UserShow = Backbone.View.extend({
       success: function(image_urls){
         $(".thumb").attr("src", image_urls.thumb)
         that.$el.find("#avatar").attr("src", image_urls.medium)
-        Capstone.router.collection.fetch()
-        Capstone.router.users && Capstone.router.users.fetch()
+        CapstoneProject.router.collection.fetch()
+        CapstoneProject.router.users && CapstoneProject.router.users.fetch()
       }
     });
   },
