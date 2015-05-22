@@ -19,7 +19,7 @@ class ApiUsersController < ApplicationController
     @user = current_user
     @user.avatar = params[:avatar]
 
-    User.skip_callback(:save, :before, :generate_session_token)
+      User.skip_callback(:save, :before, :generate_session_token)
     if @user.save
       User.set_callback( :save, :before, :generate_session_token)
       render :user_images
