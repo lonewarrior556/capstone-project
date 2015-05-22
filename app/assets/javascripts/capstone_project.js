@@ -5,7 +5,7 @@ window.CapstoneProject = {
   Routers: {},
 
   initialize: function(){
-    $(".no-login").attr("id","");
+    $(".no-login").addClass("invisible");
     $("a, button").not( document.getElementById("log-out")).on("click", function(){
       event.preventDefault()
       event.stopPropagation();

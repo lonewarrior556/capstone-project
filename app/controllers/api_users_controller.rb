@@ -15,10 +15,18 @@ class ApiUsersController < ApplicationController
     render :show
   end
 
-  def update
-    fail
-    current_user
-    render :index
+  def update_current_user
+    @user = current_user
+    @user.avatar = params[:avatar]
+
+    User.skip_callback(:save, :before, :generate_session_token)
+    if @user.save
+      User.set_callback( :save, :before, :generate_session_token)
+      render :user_images
+    else
+      User.set_callback( :save, :before, :generate_session_token)
+      render json: @user.errors, status: :unprocessable_entity
+    end
   end
 
   private

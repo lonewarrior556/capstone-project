@@ -22,12 +22,23 @@ a {
 .no-login{
   visibility:hidden
 }
+
 .login{
   visibility:hidden
 }
-#visible{
-  visibility:visible
+
+.visible{
+  opacity: 1;
+  transition: opacity 1s;
+  visibility: visible;
 }
+
+.invisible{
+  opacity: 0;
+  visibility:hidden
+}
+
+
 .help{
   display:none;
 }

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   validate :valid_email, :password_length
   attr_reader :password, :avatar
+
   before_save :generate_session_token, :sanitize
 
   def self.find_by_login(params)
@@ -51,7 +52,7 @@ class User < ActiveRecord::Base
   primary_key: :id
 
 
-  has_attached_file :avatar, :default_url => ":style/missing.jpg", :styles => { :medium => "300x300>", :thumb => "50x50>" }
+  has_attached_file :avatar, :default_url => ":style/missing.jpg", :styles => { :medium => "256x256>", :thumb => "50x50>" }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 
@@ -64,8 +65,8 @@ class User < ActiveRecord::Base
   end
 
     def generate_session_token
-      self.session_token = SecureRandom.urlsafe_base64(16)
-      self.session_token
+        self.session_token = SecureRandom.urlsafe_base64(16)
+        self.session_token
     end
 
   private

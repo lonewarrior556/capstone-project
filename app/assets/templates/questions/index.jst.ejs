@@ -1,6 +1,5 @@
 
-
-<ul class="question-index-<%=!!questions.models[0].get("author")%>">
+<ul class="question-index-<%=questions.comparator !== "timestamp" %>">
 <% questions.each(function(question){ %>
 
 

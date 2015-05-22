@@ -2,13 +2,29 @@
 
 <section class="profile">
 
-<img class="profile-image"src="<%=user.get("image_url")%>"/>
+  <img id="avatar" class="profile-image" src="<%=user.get("image_url")%>" height=256/>
+  <% if(user.get("thyself")){%>
+
+
+
+     <form class="avatar-update" enctype="multipart/form-data" accept-charset="UTF-8" method="post" id="avatarupdate">
+      <input name="utf8" type="hidden" value="✓">
+      <input type="hidden" name="_method" value="patch">
+      <label for="avatar">change your profile image</label>
+      <input type="file" name="avatar" id="user_avatar">
+      <br>
+      <button class="avatar-submit invisible">save</button>
+      </form>
+  <% } %>
+
+
 <article class="about">
   <h2> <%=user.get("username")%> </h2>
-  <% if(user.get("thyself")){%>
-     <li>This is your profile</li>
-  <% } %>
+
   <ul>
+    <% if(user.get("thyself")){%>
+     <li>This is your profile</li><% } %>
+
     <li> <%=user.get("fname")%> </li>
   </ul>
   <p>
@@ -20,3 +36,28 @@
 <section class="edit-profile"> </section>
 <section class="history">
 </section>
+
+<script type="text/javascript">
+  var original = $("#avatar").attr("src")
+
+    var readURL = function(original,input) {
+
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          $("#avatar").attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+        $(".avatar-submit").addClass("visible").removeClass("invisible")
+      }
+    else{
+      $(".avatar-submit").addClass("invisible").removeClass("visible")
+      $("#avatar").attr('src', original);
+    }
+  }.bind(this, original)
+
+
+  $("input[type=file]").change(function(){
+      readURL(this);
+  });
+</script>

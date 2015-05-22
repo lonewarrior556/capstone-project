@@ -13,14 +13,14 @@
   <ul class="header-options">
     <li>
       <% if logged_in? %>
-        <a  href="<%=user_url(current_user)%>"><img width=30 src="<%=asset_path(current_user.avatar.url)%>"></a>
+        <a  href="<%=user_url(current_user)%>"><img class="thumb" height=30 src="<%=asset_path(current_user.avatar.url(:thumb))%>"></a>
       <% else %>
         <a  href="<%=new_user_url%>">sign up</a>
       <% end %>
     </li>
     <%= render partial: "codeBin/logout" %>
 
-    <li class="no-login" id="visible">
+    <li class="no-login visible">
       <a href="<%=new_sessions_url%>">log in</a>
     </li>
 

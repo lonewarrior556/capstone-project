@@ -1,5 +1,12 @@
 CapstoneProject.Models.User = Backbone.Model.extend({
-  urlRoot: '/api_users/',
+  url: function(){
+      if (this.id){
+        return "/api_users/" + this.id
+      }
+      else{
+        return "/api_users"
+      }
+    },
 
   parse: function(data){
     data = data.user

@@ -10,6 +10,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_login(clean_params)
 
     if @user
+      self.generate_session_token
       self.login(@user)
       redirect_to root_path
     else
@@ -44,6 +45,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    current_user.generate_session_token
+    current_user.save
     logout
     redirect_to root_path
   end
