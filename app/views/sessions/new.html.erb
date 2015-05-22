@@ -1,4 +1,4 @@
-<script src="//cdn.rawgit.com/jpillora/xdomain/0.7.3/dist/xdomain.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" >
 </script>
 <h1>login info</h1>
@@ -22,43 +22,13 @@
 </form>
 
 
-<div>
-or  <a id="goog-signin" href="/auth/google_oauth2">sign in with Google</a>
-<br>
+<div id="goog-signin">
+or  <a href="/auth/google_oauth2">sign in with <img src="http://mashable.com/wp-content/uploads/2007/06/logo-google.thumbnail.gif"/></a>
 </div>
 
-<div class="all_projects">
-  <%  GlobalConstants::ALL_PROJECTS.each do | (name, url) | %>
-    <section id="<%=url%>">
-      <li> <%= name %></li>
-
-
-    </section>
-  <% end %>
+<% @projects.each do |(name, bar)| %>
+<div class="style-me group">
+  <li> <%= name %> </li>
+  <%= bar.html_safe %>
 </div>
-
-<script type="text/javascript">
-    //show current origin
-    $("#host").html(xdomain.origin);
-    //jquery ajax call
-    $("#same").load('example/files/data1.json');
-    $("#cross").load('capstone-project.heroku.com');
-  </script>
-
-<script>
-  var links = $(".all_projects section").map( function(count, item){ return item.id })
-  var link= links[0]
-// links.forEach(function(link){
-  $.get(link, function(response) {
-    var $response = $(response)
-    var $el = $response.find(".repository-lang-stats-graph")
-    $("#link").append($el)
-  })
-  debugger
-//      var $response = $(response); // Code not working from this line
-//      alert($response.find('.result').html()); // get innhtml of element by class name from response
-//   });
-
-
-
-</script>
+<% end %>

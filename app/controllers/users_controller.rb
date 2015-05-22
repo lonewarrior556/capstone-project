@@ -12,6 +12,16 @@ class UsersController < ApplicationController
     render :new
   end
 
+  def random_sign_up
+    @names = "Velvet Banks,Lemon Jello,Richard Cox,Justin Case,Lighten up,Ronald McDonald,Neit Ballsack,Norman Bates,Quentin Quale,Jeeves Wooster,Snooki Prince,Dick Less,Hives Butler,Molly Warmflash,Pussy Galore,Tiffany Case,Holly Goodhead,Monly Jones,Bawana Fana,Draco Malfoy,Andreas Gimli,Bella Buttcheeks,Buzz Lightyear,Harry Wang,San Juniper,Ben Purr,Bonly Stuart,Robert Roberts,Bong Queesha,Gypsy Starblanket,Mary McDonald,Billy Bob,Harry Glands".split(",")
+    name = @names.sample.split(" ")
+
+    username = "pee_pee_longstocking" + rand(999).to_s
+    @user = User.new(username: username, email: username+"@email.com", fname: name[0], lname: name[1] )
+    @user.password = "password"
+    render :new
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

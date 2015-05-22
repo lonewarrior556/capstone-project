@@ -8,6 +8,8 @@
 <% end %>
 </ul>
 
+<a id="make-random-user" href="/users/random">Make Random User</a>
+
 <form id="new_user" action="<%=users_url%>" enctype="multipart/form-data" method="post"  accept-charset="UTF-8">
   <input name="utf8" type="hidden" value="✓">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -20,7 +22,7 @@
   </label>
   <br>
   <label for="password">password</label>
-  <input type="password" name="user[password]">
+  <input type="password" name="user[password]" value="<%=@user.password%>">
   </label>
   <br>
   <button>Submit</button>
@@ -59,6 +61,6 @@
     });
   </script>
 
-  <div>
-  or  <a id="goog-signin" href="/auth/google_oauth2">sign in with Google</a>
+  <div id="goog-signin">
+  or  <a href="/auth/google_oauth2">sign up with <img src="http://mashable.com/wp-content/uploads/2007/06/logo-google.thumbnail.gif"/></a>
   </div>

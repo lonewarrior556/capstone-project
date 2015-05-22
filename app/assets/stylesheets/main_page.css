@@ -1,12 +1,18 @@
-h1, h2, li, ul, section, a, div, body, strong{
+h1, h2, li, ul, section, a, div, body, strong, span{
   padding: 0;
   border: 0;
   margin: 0;
   color: inherit;
-  display: block;
   font-style: inherit;
 
 }
+
+h1, h2, li, ul, section, div, body, strong, span{
+  display: block;
+}
+
+
+
 body {
   font-family: sans-serif;
   padding-bottom: 40px;
@@ -179,3 +185,61 @@ a {
   width: 1000px;
   margin: auto;
 }
+/*just code breakdown on login*/
+.style-me{
+  width: 1000px;
+  border: 2px solid  #d3d3d3;
+}
+.style-me li{
+  margin: 2px;
+  margin-top:5px;
+}
+
+span{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  float:left;
+  color: black;
+  height: 20px;
+  text-align: center;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+/**/
+
+/*google sign in link*/
+
+
+#goog-signin{
+  padding: 15px;
+  position: relative;
+  display: block;
+}
+
+#goog-signin > a{
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+#goog-signin  img{
+  height: 50px;
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 135px;
+}
+
+/**/
+
+/*random login button*/
+#make-random-user{
+  width: 143px;
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  background: grey;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+/**/

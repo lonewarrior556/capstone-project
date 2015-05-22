@@ -2,7 +2,19 @@ class SessionsController < ApplicationController
 
   before_action :redirect_logged_in, only: [:new, :create, :omniauth_callback]
 
+
+
+
+
   def new
+    @projects=[]
+    GlobalConstants::ALL_PROJECTS.each do |( name, link)|
+      code_bar = Typhoeus.get( link, followlocation: true).response_body
+      code_bar= code_bar[code_bar.index('<div class="repository-lang-stats-graph')..-1]
+      code_bar= code_bar[0..code_bar.index("</div>")+6]
+      code_bar= code_bar[code_bar.index(">")+6..-11]
+      @projects << [name, code_bar]
+    end
     render :new
   end
 
