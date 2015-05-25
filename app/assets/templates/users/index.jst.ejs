@@ -1,12 +1,9 @@
-<ul>
+<div class="users-index-list group">
 <% users.each(function(user){ %>
-  <section>
-    <l1>
+    <section>
 
-        <a class="user" href="#users/<%=user.id%>"><img src="<%=user.get("image_url")%>" alt="" width=48><%=user.get("username")%></a>
-        <%=user.get("firstName")%><br>
-        <strong>  member since <%=user.get("memberSince")%> </strong>
-    </l1>
-  </section>
+        <a href="#users/<%=user.id%>"><img src="<%=user.get("image_url")%>"><strong><%=user.get("username")%></strong>  <ul> <li>name: <%=user.get("firstName")%></li><li>member since: </li><li> <%=user.get("memberSince").slice(0,10)%></li></ul></a>
+    </section>
 
 <%  }) %>
+</div>

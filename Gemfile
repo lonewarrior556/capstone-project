@@ -34,6 +34,7 @@ gem 'ejs'
 gem 'figaro'
 gem 'aws-sdk'
 gem 'sanitize'
+gem 'faker'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

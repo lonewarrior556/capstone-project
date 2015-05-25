@@ -8,16 +8,16 @@
 Nyc stack overflow is a clone of StackOverflow built on Rails and Backbone.
 Users can:
 <!-- This is a Markdown checklist. Use it to keep track of your progress! -->
-- [ ] Create accounts
-- [ ] Create sessions (log in)
-- [ ] Create Questions
-- [ ] Create Responoses
-- [ ] View Questions and answers
+- [x] Create accounts
+- [x] Create sessions (log in)
+- [x] Create Questions
+- [x] Create Responoses
+- [x] View Questions and answers
 - [ ] Post comment on questions and responses
-- [ ] See your asked questions and replies
+- [x] See your asked questions and replies
 - [ ] Vote on responses
-- [ ] Search for Questions by title
-- [ ] select thwe best answer to your questions
+- [x] Search for Questions by title
+- [ ] select the best answer to your questions
 
 ## Design Docs
 * [View Wireframes][views]

@@ -1,22 +1,24 @@
 
-<section class="question">
+<section class="question-show-title">
   <h1>  <%= question.get("title") %> </h1>
 
   <p>
   <%= question.get("body") %>
   </p>
 
-  <div> <img src="<%=question.get("image_url")%>" alt="" width=35> <%= question.get("username") %> </div>
+  <div class="question-show-author-tag"> <img src="<%=question.get("image_url")%>" alt="" width=35> <%= question.get("username") %> </div>
 </section>
 
 
-<ul class="responses">
+<ul class="question-show-responses">
   <% responses.each(function(resp){ %>
   <li>
   <p>
     <%=resp.get("body")%>
   </p>
+  <div class="question-show-author-tag">
   <img src="<%=resp.get("image_url")%>" alt="" width=35> <%= resp.get("username") %>
+  </div>
   </li>
 
   <% }) %>

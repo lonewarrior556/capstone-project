@@ -243,3 +243,98 @@ span{
 }
 
 /**/
+
+/* users index */
+
+.users-index-list section {
+  display: block;
+  float: left;
+  width: 230px;
+  padding: 0px 10px;
+  bakcground: red;
+}
+
+.users-index-list img {
+  display: block;
+  height: 50px;
+  box-shadow: 2px 2px 1px #888888;
+}
+
+.users-index-list ul{
+  opacity: 0;
+}
+
+.users-index-list img:hover {
+  position: absolute;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 100px;
+  padding-right: 175px;
+  background: grey;
+  border: 1px solid black;
+  transition: padding .5s;
+  z-index: 1;
+}
+
+.users-index-list img:hover ~ strong{
+  position: absolute;
+  color: white;
+  top: 30px;
+  left: 95px;
+  z-index: 2;
+  transition: .5s;
+}
+
+.users-index-list img:hover ~ ul{
+  opacity: 1;
+  display: block;
+  position: absolute;
+  top: 75px;
+  left: 20px;
+  z-index: 4;
+  color: white;
+  transition: 1s;
+}
+.users-index-list a{
+  height: 50px;
+  width: 60px;
+  padding: 10px;
+  display: block;
+  position: relative;
+}
+
+.users-index-list strong {
+  color: blue;
+  font-weight: 400;
+  position: relative;
+  left: 70px;
+  top: -50px;
+}
+.users-index-list li {
+  font-size: 14px;
+  width: 200px;
+  margin: 10px;
+}
+
+/**/
+
+
+/* question show page */
+.question-show-title{
+  padding: 10px;
+}
+
+.question-show-author-tag{
+  width: 850px;
+  padding: 5px;
+  padidng-top: 0px;
+  white-space: nowrap;
+  margin: auto;
+  text-indent: 700px;
+  border-bottom: 1px solid grey;
+}
+.question-show-responses{
+  text-indent: 50px;
+  width: 900px;
+}
+/* */
