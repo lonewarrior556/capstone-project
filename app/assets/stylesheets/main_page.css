@@ -338,3 +338,63 @@ span{
   width: 900px;
 }
 /* */
+
+/* user show page */
+
+.history{
+  position: relative;
+  padding: 25px;
+}
+.question-index-false{
+  border: 1px solid black;
+  border-bottom: 0;
+  border-right: 0;
+}
+
+.question-index-false > li{
+  padding: 5px;
+}
+
+.asked > h1{
+  display: block;
+  position: relative;
+  top:2px;
+  width: 120px;
+  border-radius: 5px 5px 0px 0px;
+  border: 1px solid black;
+  border-bottom: 0;
+  padding-bottom: 5px;
+}
+.asked {
+  position: absolute;
+  top: 0;
+}
+
+.answered > h1{
+  display: block;
+  position: relative;
+  left: 130px;
+  top:2px;
+  width: 100px;
+  border-radius: 5px 5px 0px 0px;
+  border: 1px solid black;
+  border-bottom: 0;
+  padding-bottom: 5px;
+}
+.answered {
+  position: absolute;
+  top: 0;
+}
+
+.in-back {
+  display: block;
+  background: grey;
+  z-index: -1;
+}
+
+.in-front {
+  display:block;
+  z-index: 1;
+  background: tan;
+}
+/**/

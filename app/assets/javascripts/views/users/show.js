@@ -19,12 +19,16 @@ CapstoneProject.Views.UserShow = Backbone.View.extend({
     this.$el.html(this.template({user: this.user}))
     this.$el.find(".history").append(this.SubViewAsked)
     this.$el.find(".history").append(this.SubViewAnswered)
+    this.$el.find(".asked .user-show-tab-title").addClass("in-front")
+    this.$el.find(".asked .question-index-false").addClass("in-front")
+    this.$el.find(".answered .user-show-tab-title").addClass("in-back")
+    this.$el.find(".answered .question-index-false").addClass("in-back")
     return this;
   },
 
   renderSubView: function(subView, name, collection){
     subView.empty()
-    subView.append("<h1>" + name+"</h1>")
+    subView.append('<h1 class="user-show-tab-title">' + name+"</h1>")
     var view = new CapstoneProject.Views.Questions({collection: collection})
     subView.append(view.render().$el)
   },
