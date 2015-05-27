@@ -8,7 +8,8 @@ CapstoneProject.Views.QuestionShow = Backbone.View.extend({
     this.responses = new CapstoneProject.Collections.Responses({id: this.id})
   },
 
-  events: { "click .answer-button": "submit" },
+  events: { "click .answer-button": "submit",
+            "click img": "userPage"},
 
   render: function(){
     this.$el.html(this.template({question: this.question, responses: this.responses}))
@@ -29,7 +30,11 @@ CapstoneProject.Views.QuestionShow = Backbone.View.extend({
       that.render()
     }})
     CapstoneProject.router.collection.fetch()
+  },
 
+  userPage: function(event){
+    var id = $(event.currentTarget).data("id")
+    Backbone.history.navigate("users/"+id,{trigger:true} )
   }
 
 

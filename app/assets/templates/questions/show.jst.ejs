@@ -6,7 +6,7 @@
   <%= question.get("body") %>
   </p>
 
-  <div class="question-show-author-tag"> <img src="<%=question.get("image_url")%>" alt="" width=35> <%= question.get("username") %> </div>
+  <div class="question-show-author-tag"> <img data-id="<%=question.get("user_id")%>" src="<%=question.get("image_url")%>" style="cursor: pointer; cursor: hand;" width=35> <%= question.get("username") %> </div>
 </section>
 
 
@@ -17,7 +17,7 @@
     <%=resp.get("body")%>
   </p>
   <div class="question-show-author-tag">
-  <img src="<%=resp.get("image_url")%>" alt="" width=35> <%= resp.get("username") %>
+  <img data-id="<%=resp.get("user_id")%>" src="<%=resp.get("image_url")%>" width=35 style="cursor: pointer; cursor: hand;"> <%= resp.get("username") %></img>
   </div>
   </li>
 

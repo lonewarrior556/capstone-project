@@ -1,17 +1,27 @@
 
 <ul class="question-index-<%=questions.comparator !== "timestamp" %>">
+
+<% if (questions.length === 0){ %>
+   <li style="color: grey;">
+   <%= "Nothing yet..." %>
+   </li>
+<% } %>
 <% questions.each(function(question){ %>
 
 
   <li>
-    <strong class="count">
-    <%=question.get("responses")%>
+    <% if (question.get("responses")){ %>
+    <strong class="count bestReplay-<%=!!question.bestReply%>">
+    <%=question.get("responses")%> <b>answers</b>
     </strong>
+
+    <% } %>
+
     <a class="question" href="#questions/<%=question.id%>"><%=question.get("title")%></a>
 
     <% if (question.get("author")){ %>
-       <strong class="author">
-         ........ asked by, <%=question.get("author")%>
+       <strong class="author" style="cursor: pointer; cursor: hand;">
+         <img src="<%=question.get("thumb")%>"> <%=question.get("author")%> </img>
        </strong>
     <% } %>
 

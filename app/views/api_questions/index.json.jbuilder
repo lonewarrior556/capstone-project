@@ -5,4 +5,5 @@ json.array! @questions do |question|
   json.responses question.responds
   json.askDate question.created_at
   json.bestReply question.best_answer_id
+  json.thumb asset_path(question.user.avatar.url(:thumb))
 end
