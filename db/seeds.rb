@@ -25,10 +25,17 @@ end
 bodies = ["just wondering", "does anybody know?", "need to settle a bet",
   "just looking for an answer", "any information would be appreciated",
   "thought of it this mornign but can't figure it out", "Thanks in advance!",
-  "<img src='http://lorempixel.com/400/200/city/'>",
-  "<img src='http://lorempixel.com/400/200/city/'>",
-  "<img src='http://lorempixel.com/400/200/city/'>",
-  "<img src='http://lorempixel.com/400/200/city/'>"]
+  "<img src='http://lorempixel.com/400/200/city/1'>",
+  "<img src='http://lorempixel.com/400/200/city/2'>",
+  "<img src='http://lorempixel.com/400/200/city/3'>",
+  "<img src='http://lorempixel.com/400/200/city/4'>",
+  "<img src='http://lorempixel.com/400/200/city/5'>",
+  "<img src='http://lorempixel.com/400/200/city/6'>",
+  "<img src='http://lorempixel.com/400/200/city/7'>",
+  "<img src='http://lorempixel.com/400/200/city/8'>",
+  "<img src='http://lorempixel.com/400/200/city/9'>",
+  "<img src='http://lorempixel.com/400/200/city/10'>"]
+
 
 
 

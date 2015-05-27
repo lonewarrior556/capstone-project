@@ -6,13 +6,14 @@ window.CapstoneProject = {
 
   initialize: function(){
     $(".no-login").addClass("invisible");
-    $("a, button").not( document.getElementById("log-out")).on("click", function(){
+    $("a, button").not( document.getElementById("log-out")).on("click", function(event){
       event.preventDefault()
       event.stopPropagation();
       var hash = event.currentTarget.href.slice(7)
       var index = hash.indexOf("/")
       hash = hash.slice(index)
       Backbone.history.navigate(hash, {trigger: true})
+      return false
     });
 
     CapstoneProject.indexQuestions = new CapstoneProject.Collections.IndexQuestions()
