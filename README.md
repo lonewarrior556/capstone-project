@@ -56,11 +56,10 @@ Backbone side, there will be a `SearchResults` composite view.
 
 ### Bonus Features (TBD)
 - [ ] "vote up" button and counter for responses
-- [ ] Activity history (e.g. votes, answers, questions comments)
+- [x] Activity history (e.g. votes, answers, questions comments)
 - [ ] Multiple sessions/session management
-- [ ] User avatars
+- [x] User avatars
 - [ ] Typeahead search bar
-- [ ] Add views
 
 [phase-one]: ./docs/phases/phase1.md
 [phase-two]: ./docs/phases/phase2.md
