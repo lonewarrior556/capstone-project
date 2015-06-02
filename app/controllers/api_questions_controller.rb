@@ -26,6 +26,21 @@ class ApiQuestionsController < ApplicationController
     end
   end
 
+  def search
+    @query = params[:search]
+    @query = "" if @query.nil?
+    query = @query.gsub(/\W+/, ' ').split(" ")
+    user_query = (["username like ?"]* query.length).join(" or ")
+    question_and_query = (["title like ?"]* query.length).join(" and ")
+    question_or_query = (["title like ?"]* query.length).join(" or ")
+    keys = ("%" + query.join("%,%") + "%").split(",")
+    @users = User.where(user_query, *keys)
+    @questions = Question.where(question_and_query, *keys)
+    @questions = Question.where(question_or_query, *keys) if @questions.empty?
+
+    render 'sessions/search', layout: false
+  end
+
 private
   def clean_params
     params.require(:api_question).permit(:title, :body)

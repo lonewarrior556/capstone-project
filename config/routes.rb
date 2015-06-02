@@ -14,6 +14,7 @@ Rails.application.routes.draw  do
   resource :sessions, only: [:new, :create, :destroy]
   get 'sessions/search', :to => "sessions#search"
 
+  get 'api_questions/search', :to => "api_questions#search"
   resources :api_questions, only: [:index, :show, :create], defaults: { :format => 'json' } do
     resources :api_responses, only: [:index], defaults: { :format => 'json' }
   end

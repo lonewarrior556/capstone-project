@@ -100,6 +100,44 @@ a {
 .black-bar .header-options > li:hover{
   background: grey;
 }
+.search-bar{
+  position:relative;
+}
+.search-bar-box{
+  width: 200px;
+}
+/* static search results */
+.static-search-results li{
+  padding: 5px;
+  color: #000099;
+}
+.static-search-results h1{
+  margin-bottom: 20px;
+}
+
+#live-search-results{
+  z-index:2;
+  position: absolute;
+  width: 500px;
+  right: 0px;
+  top: 30px;
+  background: white;
+  color: black;
+  font: 12;
+  border: 1px solid #222;
+  border-radius: 1px;
+  max-height: 400px;
+  overflow: auto;
+}
+#live-search-results h1{
+  font-size: 20px;
+  font-weight: 500;
+  margin: 10px;
+}
+
+/**/
+
+
 /* stackExchange dropdown */
 .stack-exchange{
   cursor: pointer;
@@ -399,7 +437,7 @@ span{
 
 /*question index page*/
 .question-index-true {
-  font-size: 32px;
+  font-size: 28px;
   padding: 5px;
 }
 .question-index-true > li {
