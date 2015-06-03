@@ -8,15 +8,16 @@ CapstoneProject.Views.QuestionShow = Backbone.View.extend({
     this.responses = new CapstoneProject.Collections.Responses({id: this.id})
   },
 
-  events: { "click .answer-button": "submit",
-            "click img": "userPage"},
+  events: { "click .answer-button": "submitForm",
+            "click img": "userPage",
+            "submit": function(event){return false}},
 
   render: function(){
     this.$el.html(this.template({question: this.question, responses: this.responses}))
     return this
   },
 
-  submit: function(event){
+  submitForm: function(event){
     event.preventDefault()
     var that = this
     var options = this.$el.find(".answer-form").serializeJSON().response;

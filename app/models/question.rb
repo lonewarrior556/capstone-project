@@ -10,10 +10,16 @@ class Question < ActiveRecord::Base
   foreign_key: :user_id,
   primary_key: :id
 
-  has_many :responses,
-  class_name: "Response",
-  foreign_key: :question_id,
-  primary_key: :id
+  has_many :responses
+
+
+def self.top25
+  select("questions.*, count(responses.id) AS response_count")
+  .joins(:responses)
+  .group("questions.id")
+  .order("response_count DESC")
+  .limit(25)
+end
 
 
 

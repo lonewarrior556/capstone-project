@@ -99,6 +99,8 @@ a {
 
 .black-bar .header-options > li:hover{
   background: grey;
+  position:relative;
+  z-index: 3;
 }
 .search-bar{
   position:relative;
@@ -374,6 +376,17 @@ span{
   text-indent: 50px;
   width: 900px;
 }
+.answer-form-header{
+  margin: 10px;
+}
+
+.answer-form textarea{
+  margin: 20px;
+  margin-top: 10px;
+  padding: 10px;
+  width: 480px;
+  height: 130px;
+}
 /* */
 
 /* user show page */
@@ -474,4 +487,10 @@ span{
   margin: 10px 0 10px 800px;
   /*margin-left: 800px;*/
   /*margin-top:20px;*/
+}
+
+.more-questions {
+  color: #CC8400;
+  cursor: pointer;
+
 }

@@ -35,14 +35,13 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  class Dummy
-    def method_missing(arg1, arg2)
-      if arg2.nil?
-        eval("@#{arg1}"+"nil")
-      else
-        eval("@#{arg1}#{arg2.to_json}")
-      end
-    end
+  def sanitize_page
+    begin
+    page = params[:page].to_i || 0
+  rescue
+    page = 0
+  end
+    page*25
   end
 
 end

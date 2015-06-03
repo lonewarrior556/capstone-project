@@ -35,7 +35,11 @@ CapstoneProject.Routers.Router = Backbone.Router.extend({
   },
 
   questions: function(collection){
+    while (collection.size() > 25){
+    collection.pop();
+    }
     var view = new CapstoneProject.Views.Questions({collection: collection.sort()});
+    this.collection.page = 0
     this.root$el.append(view.render().$el)
     },
 

@@ -1,9 +1,10 @@
 CapstoneProject.Collections.IndexQuestions = Backbone.Collection.extend({
   model: CapstoneProject.Models.IndexQuestion,
-  url: '/api_questions',
+  url: function(){ return '/api_questions?page=' + this.page },
 
   comparator: "id",
 
+  page: 0
 
 
 })

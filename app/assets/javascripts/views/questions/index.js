@@ -4,9 +4,11 @@ CapstoneProject.Views.Questions = Backbone.View.extend({
 
   initialize: function(options){
     this.collection = options.collection
+    this.listenTo(this.collection, "sync", this.render)
   },
 
-  events: {"click a": "questionShow"},
+  events: {"click a": "questionShow",
+          "click .more-questions": "showMore"},
 
   render: function(){
     this.$el.html(this.template({questions: this.collection}))
@@ -17,6 +19,12 @@ CapstoneProject.Views.Questions = Backbone.View.extend({
     event.preventDefault()
     var address = event.currentTarget.hash.slice(1)
     Backbone.history.navigate(address, {trigger: true})
+  },
+
+  showMore: function(event){
+    var that = this
+    this.collection.page++
+    this.collection.fetch()
   }
 
 

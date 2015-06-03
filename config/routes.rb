@@ -1,9 +1,11 @@
 Rails.application.routes.draw  do
-  root :to => "questions#top"
+  root :to => "questions#root_page"
+
 
   get 'users/random', :to => "users#random_sign_up"
   resources :users, only: [:new, :create, :index, :show]
 
+  get 'questions/top', :to => "questions#top"
   get 'questions/unanswered', :to => "questions#unanswered"
   resources :questions
 

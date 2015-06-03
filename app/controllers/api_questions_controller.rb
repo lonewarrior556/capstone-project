@@ -3,7 +3,7 @@ class ApiQuestionsController < ApplicationController
   before_action :need_login
 
   def index
-    @questions = Question.all
+    @questions = Question.all.limit(25 + sanitize_page)
     @questions.each do |question|
       question.responds = question.responses.length
     end
