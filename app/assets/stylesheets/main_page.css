@@ -492,5 +492,67 @@ span{
 .more-questions {
   color: #CC8400;
   cursor: pointer;
+}
 
+/* new question page */
+.new-question-page{
+  padding: 20px;
+}
+
+.new-question-page section{
+  background: #fff7e3;
+  display: block;
+  float: right;
+  width: 250px;
+  padding:10px;
+  margin:10px;
+  margin-right: 30px;
+}
+.new-question-page section h1{
+  padding:5px;
+  margin-bottom: 10px;
+}
+.new-question-page section li{
+  padding: 10px;
+}
+
+.new-question-page button {
+  margin: 5px;
+  border-radius: 1px;
+	background-color: #E48681;
+	border-color: rgba(0,0,0,0.3);
+	text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+	color: #FFF;
+}
+
+.new-question-page button:hover {
+	background-color: #DA4F49;
+	border-color: rgba(0,0,0,0.5);
+}
+
+.new-question-page button:active {
+	background-color: #B32C24;
+	border-color: rgba(0,0,0,0.9);
+
+}
+
+.new-question-page label{
+  font-weight: bold;
+  font-size: 22px;
+  position: relative;
+  bottom: -4px;
+}
+
+.new-question-page input[type="text"] {
+  margin:3px;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 500px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.new-question-page input[type="text"]:focus,
+.new-question-page input[type="text"].focus {
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
 }
