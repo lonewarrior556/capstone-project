@@ -110,9 +110,6 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.2)
     jwt (1.5.0)
-    kaminari (0.16.3)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -221,8 +218,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
-    turbolinks (2.5.3)
-      coffee-rails
     typhoeus (0.7.1)
       ethon (>= 0.7.1)
     tzinfo (1.2.2)
@@ -255,7 +250,6 @@ DEPENDENCIES
   figaro
   jbuilder (~> 2.0)
   jquery-rails
-  kaminari
   omniauth-google-oauth2 (~> 0.2.1)
   paperclip (~> 4.2)
   pg
@@ -267,7 +261,6 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   spring
   sprockets (~> 2.0)
-  turbolinks
   typhoeus
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
