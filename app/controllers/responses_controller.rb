@@ -21,7 +21,7 @@ class ResponsesController < ApplicationController
   :to => '2018005988',
   	:body => message,
   })
-
+    render json: {sent: true}
 
   end
 
