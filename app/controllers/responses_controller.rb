@@ -17,7 +17,7 @@ class ResponsesController < ApplicationController
   def email
     message = "from: #{params[:name]} at email: #{params[:email]}, phone: #{params[:phone]}, message: #{params[:message]}"
 
-    @client = Twilio::REST::Client.new env["twilio_account_sid"], env["twilio_auth_token"]
+    @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
     @client.account.messages.create({
 	:from => '+12015618850',
   :to => '2018005988',
