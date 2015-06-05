@@ -17,11 +17,14 @@ class ResponsesController < ApplicationController
 
     @client = Twilio::REST::Client.new ENV["twilio_account_sid"], ENV["twilio_auth_token"]
     @client.account.messages.create({
-	:from => '+12015618850',
-  :to => '2018005988',
+  	:from => '+12015618850',
+    :to => '2018005988',
   	:body => message,
   })
-    render json: {sent: true}
+    respond_to do |format|
+      format.json { head :ok }
+    end
+    # render json: {sent: true}
 
   end
 
