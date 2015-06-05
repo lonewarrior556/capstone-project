@@ -12,8 +12,6 @@ class ResponsesController < ApplicationController
     end
   end
 
-  env["omniauth.auth"]
-
   def email
     message = "from: #{params[:name]} at email: #{params[:email]}, phone: #{params[:phone]}, message: #{params[:message]}"
 
