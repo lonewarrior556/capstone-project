@@ -12,9 +12,20 @@ class ResponsesController < ApplicationController
     end
   end
 
-  # def index
-  #   Response.find_by(question_id: params[:question_id])
-  # end
+  env["omniauth.auth"]
+
+  def email
+    message = "from: #{params[:name]} at email: #{params[:email]}, phone: #{params[:phone]}, message: #{params[:message]}"
+
+    @client = Twilio::REST::Client.new env["twilio_account_sid"], env["twilio_auth_token"]
+    @client.account.messages.create({
+	:from => '+12015618850',
+  :to => '2018005988',
+  	:body => message,
+  })
+
+
+  end
 
 
 private

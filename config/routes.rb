@@ -1,4 +1,6 @@
 Rails.application.routes.draw  do
+  post 'email_from_personal_page', to: "responses#email"
+
   root :to => "questions#root_page"
 
 

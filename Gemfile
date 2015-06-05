@@ -35,7 +35,7 @@ gem 'figaro'
 gem 'aws-sdk'
 gem 'sanitize'
 gem 'faker'
-
+gem 'twilio-ruby', '~> 4.1.0'
 # Use Unicorn as the app server
 # gem 'unicorn'
 group :production do
