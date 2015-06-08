@@ -3,7 +3,7 @@
   <li> <strong class="count bestReplay-false">
   <%=question.responses.length%> <b>answers</b>
   </strong>
-  <a class="question" href="questions/<%=question.id%>"> <%= question.title%></a>
+  <a class="question" href="<%=question_url(question)%>"> <%= question.title%></a>
   <strong class="author" >
     <img src="<%=question.user.avatar.url(:thumb)%>"> <%=question.user.username%></img>
   </strong>
