@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
   end
 
   def unanswered
-    @questions = Question.all.where(best_answer_id: nil)
+    @questions = Question.all.where(best_answer_id: nil).limit(25)
     render :unanswered
   end
 
