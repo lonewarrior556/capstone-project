@@ -1,4 +1,20 @@
-<h1>Users</h1>
+<div class="users-index-list group">
+  <% @users.each do |user| %>
+      <section>
+
+          <a href="<%=user_url(user)%>">
+            <img src="<%=user.avatar.url(:thumb)%>">
+            <strong> <%=user.username%></strong>
+            <ul>
+              <li>name: <%=user.fname%></li>
+              <li>member since: </li>
+              <li> <%=user.created_at.to_s[0..10]%></li>
+            </ul>
+          </a>
+      </section>
+
+  <%  end %>
+  </div>
 
 <ul>
 <% @users.each  do |user|%>

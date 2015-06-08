@@ -1,9 +1,13 @@
-<ul>
+<ul <ul class="question-index-true" >
 <% @questions.each do |question| %>
-<section>
-  <h2> <a href="<%=question_url(question)%>"><%= question.title %></a>  
-    <strong> ........ asked by, <%=question.user.username%> </strong>
-  </h2>
-</secion>
+  <li> <strong class="count bestReplay-false">
+  <%=question.responses.length%> <b>answers</b>
+  </strong>
+  <a class="question" href="questions/<%=question.id%>"> <%= question.title%></a>
+  <strong class="author" >
+    <img src="<%=question.user.avatar.url(:thumb)%>"> <%=question.user.username%></img>
+  </strong>
+
+  </li>
 <% end %>
 </ul>

@@ -23,6 +23,11 @@ ul {
 a {
   text-decoration: none;
 }
+.white{
+  background:white;
+}
+
+
 
 .group:after{
   content:'';
@@ -141,6 +146,7 @@ a {
 
 
 /* stackExchange dropdown */
+
 .stack-exchange{
   cursor: pointer;
   display: block;
@@ -156,23 +162,46 @@ a {
 
 .stack-exchange li{
   display: block;
-  padding: 5px;
+  padding: 10px;
   z-index: -1
 }
 .stack-exchange li:hover{
   background: white;
 }
 
-#drop-down{
+#drop-down, .se-icon{
   display: none;
 }
 
 #drop-down:checked ~ .stack-exchange{
   z-index: 1;
-  background: grey;
+  background: #CDBE70;
   color: black;
   border: 1px solid black;
 }
+#drop-down:checked ~ .stack-exchange .se-icon{
+  display: inline;
+}
+
+#drop-down:checked ~ .stack-exchange .blue{
+  color: blue;
+  font-weight:500;
+  letter-spacing: 1px
+  ;
+}
+#drop-down:checked ~ .stack-exchange .white-text{
+  color: white;
+  font-style: normal;
+  font-weight: 100;
+}
+#drop-down:checked ~ .stack-exchange li:hover .white-text{
+  color: black;
+  font-weight: 400;
+}
+#drop-down:checked ~ .stack-exchange li:hover .blue{
+  color: #2f96e8;
+}
+
 /**/
 
 

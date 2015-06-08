@@ -20,7 +20,7 @@
     <a class="question" href="#questions/<%=question.id%>"><%=question.get("title")%></a>
 
     <% if (question.get("author")){ %>
-       <strong class="author" style="cursor: pointer; cursor: hand;">
+       <strong class="author">
          <img src="<%=question.get("thumb")%>"> <%=question.get("author")%> </img>
        </strong>
     <% } %>

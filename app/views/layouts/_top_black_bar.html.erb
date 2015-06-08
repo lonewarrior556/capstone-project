@@ -4,10 +4,11 @@
 
     <input id="drop-down" type="checkbox">
       <ul class="stack-exchange">
-        <label for="drop-down">StackExchange</label>
-        <li>current community</li>
-        <li>your communities</li>
-        <li>more communities</li>
+        <label for="drop-down"><img src=<%=asset_path("se-icon.png")%> alt=""/> StackExchange</label>
+        <li><a href="http://stackexchange.com/"><img class="se-icon" src=<%=asset_path("se-icon.png")%> alt=""/> <i class="white-text">Stack</i><b class="blue">Exchange</b></a></li>
+        <li><a href="http://stackoverflow.com/"><img class="se-icon" src=<%=asset_path("so-icon.png")%> alt=""/> Stack<b>Overflow</b></a></li>
+        <li>
+          <a href="http://stackexchange.com/sites"> more communities..</a></li>
       </ul>
 
   <ul class="header-options">
@@ -24,7 +25,7 @@
       <a href="<%=new_sessions_url%>">log in</a>
     </li>
 
-    <li><a href="#">tour</a></li>
+    <li></li>
 
     <li>
       <ul class="help" >
@@ -40,7 +41,7 @@
         <input  class="search-bar-box" type="text" name="search" placeholder="search">
         <button style = "display:none"></button>
       <div id="live-search-results">
-      
+
       </div>
       </form>
     </li>

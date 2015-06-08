@@ -2,7 +2,15 @@
 <% users.each(function(user){ %>
     <section>
 
-        <a href="#users/<%=user.id%>"><img src="<%=user.get("image_url")%>"><strong><%=user.get("username")%></strong>  <ul> <li>name: <%=user.get("firstName")%></li><li>member since: </li><li> <%=user.get("memberSince").slice(0,10)%></li></ul></a>
+        <a href="#users/<%=user.id%>">
+          <img src="<%=user.get("image_url")%>">
+          <strong> <%=user.get("username")%></strong>
+          <ul>
+            <li>name: <%=user.get("firstName")%></li>
+            <li>member since: </li>
+            <li> <%=user.get("memberSince").slice(0,10)%></li>
+          </ul> 
+        </a>
     </section>
 
 <%  }) %>

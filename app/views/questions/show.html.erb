@@ -1,22 +1,23 @@
 
-<section class="question">
+<section class="question-show-title">
   <h1>  <%= @question.title %> </h1>
 
   <p>
   <%= @question.body.html_safe %>
   </p>
-
+  <div class="question-show-author-tag"> <a href="<%=user_url(@question.user)%>"><img src="<%=@question.user.avatar.url(:thumb)%>" width=35> <%= @question.user.username %> </div>
 </section>
 
 
-<ul class="responses">
+<ul class="question-show-responses">
   <% @responses.each do |resp| %>
   <li>
   <p>
     <%=resp.body%>
-    by <strong><a href="<%=user_url(resp.user_id)%>" > <%=resp.user.username%></a><strong>
   </p>
-
+  <div class="question-show-author-tag">
+  <a href="<%=user_url(resp.user)%>"> <img src="<%=resp.user.avatar.url(:thumb)%>" width=35> <%= resp.user.username %></a>
+  </div>
   </li>
   <% end %>
 </ul>
@@ -25,11 +26,9 @@
 <h2>your Answer</h2>
 <form action=" <%=new_sessions_url%> " method="get">
   <label for="body">Response
-  <input type="text" name="response[body]">
+<textarea name="" cols="60" rows="5" tabindex="101" data-min-length=""></textarea>
+
   </label>
   <br>
   <button>Post Your Answer</button>
 </form>
-
-<!--
-<textarea name="" cols="92" rows="15" tabindex="101" data-min-length=""></textarea> -->
