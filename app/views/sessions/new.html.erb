@@ -5,7 +5,10 @@
     <li> <%=error%> </li>
 <% end %>
   </ul>
-
+<button>
+<a class="guest-redirect" href="<%=new_user_url%>">Guest Click Here</a>
+</button>
+<br><br>
 <form action="<%=sessions_url%>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <label for="username">username
