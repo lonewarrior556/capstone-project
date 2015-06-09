@@ -15,15 +15,3 @@
 
   <%  end %>
   </div>
-
-<ul>
-<% @users.each  do |user|%>
-  <li>
-    <a href="/users/<%=user.id%>">
-    <img src="<%=asset_path( user.avatar.url(:thumb) ) %>">
-    <%=user.username %>
-    </a>
-
-    </li>
-<% end %>
-</ul>
