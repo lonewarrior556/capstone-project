@@ -17,7 +17,6 @@ class ApiQuestionsController < ApplicationController
   end
 
   def create
-    debugger
     @question = Question.new(clean_params)
     @question.user_id = current_user.id
     if @question.save
