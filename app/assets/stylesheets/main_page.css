@@ -175,7 +175,7 @@ a {
 
 #drop-down:checked ~ .stack-exchange{
   z-index: 1;
-  background: #CDBE70;
+  background: #E0E0E0;
   color: black;
   border: 1px solid black;
 }
