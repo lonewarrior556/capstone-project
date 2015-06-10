@@ -342,6 +342,7 @@ span{
   border: 1px solid black;
   transition: padding .5s;
   z-index: 1;
+  box-shadow: 0px 0px 0px #888888;
 }
 
 .users-index-list img:hover ~ strong{
