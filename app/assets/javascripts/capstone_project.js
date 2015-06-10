@@ -6,7 +6,7 @@ window.CapstoneProject = {
 
   initialize: function(){
     $(".no-login").addClass("invisible");
-    $("a, button").not( document.getElementById("log-out")).on("click", function(event){
+    $("a, button").not( "#log-out, .links").on("click", function(event){
       event.preventDefault()
       event.stopPropagation();
       var hash = event.currentTarget.href.slice(7)
